@@ -4,8 +4,8 @@ plugins {
     id("net.researchgate.release") version "3.0.2"
 }
 
-group = property("GROUP").toString()
-version = property("VERSION").toString()
+group = property("group").toString()
+version = property("version").toString()
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -24,9 +24,9 @@ release {
 gradlePlugin {
     // Define the plugin
     val greeting by plugins.creating {
-        id = property("ID").toString()
-        implementationClass = property("IMPLEMENTATION_CLASS").toString()
-        version = property("VERSION").toString()
+        id = property("id").toString()
+        implementationClass = property("implementation.class").toString()
+        version = property("version").toString()
     }
 }
 
