@@ -1,7 +1,11 @@
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
+    id("net.researchgate.release") version "3.0.2"
 }
+
+group = property("GROUP").toString()
+version = property("VERSION").toString()
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -13,11 +17,16 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
 }
 
+release {
+    tagTemplate.set("v${version}")
+}
+
 gradlePlugin {
     // Define the plugin
     val greeting by plugins.creating {
-        id = "gradle.workflow.test.greeting"
-        implementationClass = "gradle.workflow.test.GradleWorkflowTestPlugin"
+        id = property("ID").toString()
+        implementationClass = property("IMPLEMENTATION_CLASS").toString()
+        version = property("VERSION").toString()
     }
 }
 
