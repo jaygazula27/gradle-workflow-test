@@ -36,7 +36,7 @@ class GradleWorkflowTestPluginFunctionalTest {
         BuildResult result = runner.build();
 
         // Verify the result
-        assertTrue(result.getOutput().contains("Hello from plugin 'gradle.workflow.test.greeting'"));
+        assertTrue(result.getOutput().contains("Hello there from plugin 'gradle.workflow.test.greeting'"));
     }
 
     private void writeString(File file, String string) throws IOException {
