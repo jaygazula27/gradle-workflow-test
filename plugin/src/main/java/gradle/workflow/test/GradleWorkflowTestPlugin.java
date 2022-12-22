@@ -13,7 +13,7 @@ public class GradleWorkflowTestPlugin implements Plugin<Project> {
     public void apply(Project project) {
         // Register a task
         project.getTasks().register("greeting", task -> {
-            task.doLast(s -> System.out.println("Hello there from plugin 'gradle.workflow.test.greeting'"));
+            task.doLast(s -> System.out.println("Hello there from plugin 'com.example.plugin.greeting'"));
         });
     }
 }

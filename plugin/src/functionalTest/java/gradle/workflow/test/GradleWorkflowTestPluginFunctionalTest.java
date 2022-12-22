@@ -24,7 +24,7 @@ class GradleWorkflowTestPluginFunctionalTest {
         writeString(new File(projectDir, "settings.gradle"), "");
         writeString(new File(projectDir, "build.gradle"),
             "plugins {" +
-            "  id('gradle.workflow.test.greeting')" +
+            "  id('com.example.plugin.greeting')" +
             "}");
 
         // Run the build
@@ -36,7 +36,7 @@ class GradleWorkflowTestPluginFunctionalTest {
         BuildResult result = runner.build();
 
         // Verify the result
-        assertTrue(result.getOutput().contains("Hello there from plugin 'gradle.workflow.test.greeting'"));
+        assertTrue(result.getOutput().contains("Hello there from plugin 'com.example.plugin.greeting'"));
     }
 
     private void writeString(File file, String string) throws IOException {

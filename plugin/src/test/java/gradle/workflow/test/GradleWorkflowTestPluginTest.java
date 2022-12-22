@@ -15,7 +15,7 @@ class GradleWorkflowTestPluginTest {
     @Test void pluginRegistersATask() {
         // Create a test project and apply the plugin
         Project project = ProjectBuilder.builder().build();
-        project.getPlugins().apply("gradle.workflow.test.greeting");
+        project.getPlugins().apply("com.example.plugin.greeting");
 
         // Verify the result
         assertNotNull(project.getTasks().findByName("greeting"));
