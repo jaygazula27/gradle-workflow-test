@@ -15,7 +15,7 @@ dependencies {
 }
 
 release {
-    tagTemplate.set("v$version")
+    tagTemplate.set("v${property("version").toString()}")
 }
 
 gradlePlugin {
