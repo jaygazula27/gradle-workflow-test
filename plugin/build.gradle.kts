@@ -17,9 +17,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
 }
 
-release {
-    tagTemplate.set("v${version}")
-}
+//release {
+//    tagTemplate.set("v${version}")
+//}
 
 gradlePlugin {
     // Define the plugin
