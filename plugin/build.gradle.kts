@@ -4,9 +4,6 @@ plugins {
     id("net.researchgate.release") version "3.0.2"
 }
 
-group = property("group").toString()
-version = property("version").toString()
-
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -17,9 +14,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
 }
 
-//release {
-//    tagTemplate.set("v${version}")
-//}
+release {
+    tagTemplate.set("v$version")
+}
 
 gradlePlugin {
     // Define the plugin
