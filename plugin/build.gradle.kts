@@ -33,6 +33,7 @@ gradlePlugin {
         implementationClass = property("implementation.class").toString()
         version = property("version").toString()
         displayName = "blah"
+        description = "my freaking description"
     }
 }
 
