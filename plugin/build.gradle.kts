@@ -32,7 +32,13 @@ gradlePlugin {
         id = property("id").toString()
         implementationClass = property("implementation.class").toString()
         version = property("version").toString()
+        displayName = "blah"
     }
+}
+
+pluginBundle {
+    website = "https://www.blah.com"
+    vcsUrl = "https://github.com/jaygazula27/gradle-workflow-test"
 }
 
 // Add a source set for the functional test suite
