@@ -2,6 +2,7 @@ plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
     id("net.researchgate.release") version "3.0.2"
+    id "com.gradle.plugin-publish" version "1.1.0"
 }
 
 repositories {
