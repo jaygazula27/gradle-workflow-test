@@ -18,7 +18,7 @@ release {
     tagTemplate.set("v\$version")
 }
 
-task("afterReleaseBuild") {
+project.tasks.named("afterReleaseBuild") {
     dependsOn("publishPlugins")
 }
 
