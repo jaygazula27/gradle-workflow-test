@@ -20,4 +20,17 @@ jobs:
           touch testfile
           git add -A
           git commit -m "testfile added"
-          git push
+
+      - name: Get commit sha
+        run: |
+          echo "NEW_COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
+
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: refs/heads/main,
+              sha: "${{ env.NEW_COMMIT_SHA }}"
+            })
