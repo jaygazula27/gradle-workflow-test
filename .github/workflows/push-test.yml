@@ -1,0 +1,23 @@
+name: Basic test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure Git user
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - name: Test push privs
+        run: |
+          touch testfile
+          git add -A
+          git commit -m "testfile added"
+          git push

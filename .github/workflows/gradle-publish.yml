@@ -41,4 +41,4 @@ jobs:
       - name: Build with gradle
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: clean release -Prelease.newVersion=${{ inputs.developmentVersion }}
+          arguments: clean release -Prelease.useAutomaticVersion=true -Prelease.newVersion=${{ inputs.developmentVersion }}
