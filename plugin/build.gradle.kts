@@ -5,6 +5,9 @@ plugins {
     id("com.gradle.plugin-publish") version "1.1.0"
 }
 
+group = property("id").toString()
+version = property("version").toString()
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
