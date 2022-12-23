@@ -18,6 +18,10 @@ release {
     tagTemplate.set("v\$version")
 }
 
+task("afterReleaseBuild") {
+    dependsOn("publishPlugins")
+}
+
 gradlePlugin {
     // Define the plugin
     val greeting by plugins.creating {
