@@ -31,6 +31,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: refs/heads/main,
+              ref: "refs/heads/main",
               sha: "${{ env.NEW_COMMIT_SHA }}"
             })
